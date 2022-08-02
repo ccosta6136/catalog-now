@@ -24,6 +24,9 @@ class Product(models.Model):
     date_updated = models.DateTimeField(auto_now=True)
     date_published = models.DateTimeField()
 
+    def __str__(self):
+        return f"{self.product_title}"
+
 
     
 class Catalog(models.Model):

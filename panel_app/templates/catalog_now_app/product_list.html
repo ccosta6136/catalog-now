@@ -1,0 +1,49 @@
+{% extends "catalog_now_app/base.html" %}
+
+{% block main %}
+
+<br>
+
+<a class="btn btn-primary" href="{% url 'product-create' %}" role="button">New Product</a>
+
+<br>
+<br>
+
+<table class="table table-success table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Product</th>
+            <th scope="col">Short Description</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+            <th scope="col">Image</th>
+            <th scope="col">Author</th>
+            <th scope="col">Date Created</th>
+            <th scope="col">Date Updated</th>
+            <th scope="col">Date Published</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        {%for product in products %}
+            <tr>
+                <td>{{product.product_title}}</td>
+                <td>{{product.short_description}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.image}}</td>
+                <td>{{product.author}}</td>
+                <td>{{product.date_created}}</td>
+                <td>{{product.date_updated}}</td>
+                <td>{{product.date_published}}</td>
+                <td>
+                    <a class="btn btn-info" href="{% url 'product-update' product.id %}" role="button">Edit</a>
+                    <a class="btn btn-warning" href="{% url 'product-delete' product.id %}" role="button">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+{% endblock %}
