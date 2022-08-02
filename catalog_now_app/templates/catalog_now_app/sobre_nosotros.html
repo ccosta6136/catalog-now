@@ -1,0 +1,45 @@
+{% extends "catalog_now_app/base.html" %}
+{% load static %}
+
+{% block main %}
+
+
+<section id="about" class="about pt-5">
+  <div class="container" data-aos="fade-up">
+
+    <div class="row gy-4">
+      <div class="col-lg-6 position-relative align-self-start order-lg-last order-first">
+        <img src={% static 'app_boostrap/assets/img/about.jpg' %} class="img-fluid" alt="">
+
+        <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
+      </div>
+      <div class="col-lg-6 content order-last  order-lg-first">
+        <h3>Sobre Nosotros</h3>
+        <p>
+          Somos César Costa y Pablo Moreno  y armamos un proyetcto final para Coder House  para que las pequeñas y medianas empresas armaen su 
+          catalgos online  puedan distrbuirlos  por todos los canales digitales de forma agil.</p>
+        <ul>
+          <li data-aos="fade-up" data-aos-delay="100">
+            <i class="bi bi-diagram-3"></i>
+            <div>
+              <h5>Distribuí de tu catalogo</h5>
+              <p>Podras distribuir de catalog de manera rapido por todas tu redes sociales y canales de mensajría</p>
+            </div>
+          </li>
+          <li data-aos="fade-up" data-aos-delay="200">
+            <i class="bi bi-fullscreen-exit"></i>
+            <div>
+              <h5>Instala, Actualizay  Edita de forma sencilla y rapida </h5>
+              <p>En solo 3 pasos podes tener tu aplicación andando y distribuir tu catalogo de forma agil y sencilla.</p>
+            </div>
+          </li>
+         
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section><!-- End About Us Section -->
+
+
+{% endblock %}
