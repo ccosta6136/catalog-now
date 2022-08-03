@@ -8,7 +8,8 @@ from django.urls import reverse_lazy
 
 # Create your views here.
 class ProductList(ListView):
-    model = Product
+    queryset = Product.objects.all()
+    #model = Product
     template_name = "catalog_now_app/product_list.html"
     context_object_name = "products"
 

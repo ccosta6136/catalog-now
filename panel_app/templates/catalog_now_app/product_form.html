@@ -1,19 +1,24 @@
 {% extends "catalog_now_app/base.html" %}
+
 {% load static %}
+
 {% block extrahead %}
 <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
 <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
 {% endblock %}
 
 {% block main %}
-    <a class="btn btn-primary" href="{% url 'panel-page' %}" role="button">Back to List</a>
+<a class="btn btn-primary" href="{% url 'panel-page' %}" role="button">Back to List</a>
 
-    <form method="post" style="margin-top: 1em;">{% csrf_token %}
-        {{ form.as_p }}
-        {% if request.resolver_match.url_name == "product-update" %}
-            <button type="submit" class="btn btn-primary">Update</button>
-        {% else %}
-            <button type="submit" class="btn btn-success">Create</button>
-        {% endif %}
-    </form>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    {% if request.resolver_match.url_name == "product-update" %}
+        <button type="submit" class="btn btn-primary">Update</button>
+    {% else %}
+        <button type="submit" class="btn btn-success">Create</button>
+    {% endif %}
+</form>
 {% endblock %}
