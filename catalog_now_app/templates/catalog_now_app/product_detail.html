@@ -1,0 +1,43 @@
+{% extends "catalog_now_app/base.html" %}
+{% load static %}
+
+
+{% block title %}
+Detalle productos
+{% endblock title %}
+
+{% block title_page %}
+Detalle productos
+{% endblock title_page %}
+
+{% block main %}
+
+
+<section id="features" class="features">
+    <div class="section-header">
+        <span>Detalle {{product.product_title}}</span>
+        <h1><br></h1>
+    </div>
+    <div class="container">
+        <div class="row gy-4 align-items-center features-item aos-init aos-animate" data-aos="fade-up">
+            <div class="col-md-5">
+                <img src ="{{product.image.url}}" class="img-fluid" alt=""/>
+            </div>
+            <div class="col-md-7">
+                <h3>{{product.product_title}}</h3>
+                <p class="fst-italic">
+                    {{product.description | safe}} 
+                </p>
+                <ul>
+                    <li><i class="bi bi-currency-dollar" style="float: left;""></i> <h5 style="float: left;">{{product.price}}</h5></li>
+                    <li style="margin:30px 20px;"> <a class="btn btn-dark btn-md" href="{% url 'product-list' %}" role="button" style="float: right;">Volver al listado</a></li>
+                </ul>
+              
+            </div>
+        </div>
+    </div>
+</section>    
+
+
+
+{% endblock %}
