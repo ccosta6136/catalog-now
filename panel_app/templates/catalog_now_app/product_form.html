@@ -1,5 +1,7 @@
 {% extends "catalog_now_app/base.html" %}
 
+{% load crispy_forms_tags %}
+
 {% load static %}
 
 {% block extrahead %}
@@ -8,17 +10,28 @@
 {% endblock %}
 
 {% block main %}
+
 <a class="btn btn-primary" href="{% url 'panel-page' %}" role="button">Back to List</a>
 
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
 
-    {{ form.as_p }}
+    <div class="d-flex justify-content-center">
+        <div class="d-flex flex-column">
 
-    {% if request.resolver_match.url_name == "product-update" %}
-        <button type="submit" class="btn btn-primary">Update</button>
-    {% else %}
-        <button type="submit" class="btn btn-success">Create</button>
-    {% endif %}
+            {{ form | crispy}}
+
+            <br>
+
+            {% if request.resolver_match.url_name == "product-update" %}
+                <button type="submit" class="btn btn-primary">Update</button>
+            {% else %}
+                <button type="submit" class="btn btn-success">Create</button>
+            {% endif %}
+        </div>
+    </div>
 </form>
+
+<br><br>
+
 {% endblock %}
