@@ -50,7 +50,7 @@ class SignUpView(SuccessMessageMixin, CreateView):
     form_class = UserCreationForm
     success_message = "¡¡ Se creo tu perfil satisfactoriamente !!"
 
-class UserProfile(LoginRequiredMixin, DetailView):
+class UserProfile(LoginRequiredMixin, UserPassesTestMixin, DetailView):
     model = Publisher
     template_name = "user_profile/user_detail.html"
 
