@@ -1,0 +1,46 @@
+{% extends "catalog_now_app/base.html" %}
+
+{% load static %}
+
+
+{% block title %}
+Nuestros productos
+{% endblock title %}
+
+{% block title_page %}
+Nuestros productos
+{% endblock title_page %}
+
+{% block main %}
+
+<section id="service" class="services pt-0">
+  
+    {% if products %}
+        <div class="section-header">
+            <span>Productos</span>
+            <h1>Productos</h1>
+        </div>
+        {% for product in products %}
+            <div class="container aos-init aos-animate" data-aos="fade-up">
+                <div class="section-header"></div>    
+                <div class="row gy-4 justify-content-center ">
+                    
+                    <div class="col-lg-4 col-md-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card">
+                            <div class="card-img">
+                                <img src ="{{product.image.url}}" class="img-responsive img-fluid" width="300" height="300" alt="" />
+                            </div>
+                            <h3><a href="{% url 'product-detail' product.id %}" class="stretched-link">{{product.product_title}}</a></h3>
+                            <p>${{product.price}}</p>                       
+                            <p>{{product.short_description}}</p>
+                            
+                        </div>
+                    </div><!-- End Card Item -->
+                </div>
+            </div> 
+        {% endfor %}
+    {% else %}
+        <p>No hay productos registrados</p>   
+    {% endif %}
+</section>
+{% endblock %}

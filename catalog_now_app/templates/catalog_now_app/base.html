@@ -49,6 +49,10 @@
   <!-- Template Main CSS File -->
   <!--<link href="assets/css/main.css" rel="stylesheet">-->
   <link href= {% static 'app_bootstrap/assets/css/main.css' %} rel="stylesheet" />
+
+
+ 
+
 </head>
 <body>
 
@@ -66,7 +70,7 @@
           <nav id="navbar" class="navbar">
             <ul>
               <li><a href={% url 'main-page' %}>Inicio</a></li>
-              <li><a href={% url 'sobre-nosotros' %}>Sobre nosotros</a></li>
+              <li><a href={% url 'about-us' %}>Sobre nosotros</a></li>
             
             
             </ul>
@@ -114,7 +118,7 @@
           <h4>Accesos</h4>
           <ul>
             <li><a href={% url 'main-page' %}Inicio</a></li>
-              <li><a href={% url 'sobre-nosotros' %}>Sobre nosotros</a></li>
+              <li><a href={% url 'about-us' %}>Sobre nosotros</a></li>
 
           </ul>
         </div>
