@@ -1,11 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, TemplateView, View
-<<<<<<< HEAD
 from catalog_now_app.models import Product, Catalog
-=======
-from .models import Product, Catalog
-
->>>>>>> origin/main
 # Create your views here.
 
 class BaseView(View):
@@ -25,7 +20,6 @@ class ProductDetailView(DetailView):
     model = Product
     template_name = "catalog_now_app/product_detail.html"  
    
-
 class ProductListUser(ListView):
     model = Product
     template_name = "catalog_now_app/list_products.html"

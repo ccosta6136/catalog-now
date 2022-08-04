@@ -44,7 +44,7 @@ class PanelLogin(LoginView):
 class PanelLogout(LogoutView):
     template_name = 'catalog_now_app/panel_logout.html'
 
-class SignUpView(SuccessMessageMixin, UserPassesTestMixin, CreateView):
+class SignUpView(SuccessMessageMixin, CreateView):
     template_name = 'catalog_now_app/panel_create_account_form.html'
     success_url = reverse_lazy('panel-page')
     form_class = UserCreationForm

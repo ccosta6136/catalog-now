@@ -12,7 +12,7 @@
     {% csrf_token %}
     <div class="d-flex justify-content-center">
         <div class="d-flex flex-column">
-            {{ form.as_p | crispy}}
+            {{ form | crispy}}
             <button type="submit" class="btn btn-danger">Create Account</button>
         </div>
     </div>
