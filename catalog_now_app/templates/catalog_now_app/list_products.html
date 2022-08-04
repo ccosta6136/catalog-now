@@ -2,45 +2,50 @@
 
 {% load static %}
 
-
 {% block title %}
-Nuestros productos
+    Nuestros productos
 {% endblock title %}
 
 {% block title_page %}
-Nuestros productos
+    Nuestros productos
 {% endblock title_page %}
 
 {% block main %}
 
-<section id="service" class="services pt-0">
-  
+<style> 
+    .services .card p {
+        padding: 0 0px !important;
+    }
+</style>
+
+<section id="service" class="services pt-0"> 
     {% if products %}
         <div class="section-header">
             <span>Productos</span>
             <h1>Productos</h1>
         </div>
-        {% for product in products %}
-            <div class="container aos-init aos-animate" data-aos="fade-up">
-                <div class="section-header"></div>    
-                <div class="row gy-4 justify-content-center ">
-                    
-                    <div class="col-lg-4 col-md-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-                        <div class="card">
+
+        <div class="container py-5">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                {% for product in products %}
+                    <div class="col aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card h-100">
                             <div class="card-img">
-                                <img src ="{{product.image.url}}" class="img-responsive img-fluid" width="300" height="300" alt="" />
+                                <img src ="{{product.image.url}}" class="card-img-top img-responsive img-fluid" width="300" height="300" alt="" />
                             </div>
-                            <h3><a href="{% url 'product-detail' product.id %}" class="stretched-link">{{product.product_title}}</a></h3>
-                            <p>${{product.price}}</p>                       
-                            <p>{{product.short_description}}</p>
-                            
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="{% url 'product-detail' product.id %}" class="stretched-link">{{product.product_title}}</a></h5>
+                                <p class="card-text">${{product.price}}</p>
+                                <p class="card-text">{{product.short_description}}</p>
+                            </div>
                         </div>
-                    </div><!-- End Card Item -->
-                </div>
-            </div> 
-        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
     {% else %}
         <p>No hay productos registrados</p>   
     {% endif %}
 </section>
+
 {% endblock %}
