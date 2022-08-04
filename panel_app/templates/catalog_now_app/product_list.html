@@ -28,8 +28,8 @@
         {%for product in products %}
             <tr>
                 <td>{{product.product_title}}</td>
-                <td>{{product.short_description}}</td>
-                <td>{{product.description}}</td>
+                <td>{{product.short_description | safe}}</td>
+                <td>{{product.description | safe}}</td>
                 <td>{{product.price}}</td>
                 <td>{{product.image}}</td>
                 <td>{{product.author}}</td>
