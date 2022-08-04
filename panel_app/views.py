@@ -12,6 +12,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
+
 # Create your views here.
 class ProductList(LoginRequiredMixin, ListView):
     queryset = Product.objects.all()
