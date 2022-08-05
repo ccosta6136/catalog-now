@@ -56,7 +56,7 @@ class SignUpView(SuccessMessageMixin, BaseView, CreateView):
     success_message = "¡¡ Se creo tu perfil satisfactoriamente !!"
 
 class UserProfile(LoginRequiredMixin, UserPassesTestMixin, DetailView):
-    model = Publisher
+    model = User
     template_name = "user_profile/user_detail.html"
 
     def test_func(self):
