@@ -14,6 +14,7 @@
             <a class="btn btn-primary" href="{% url 'catalog-create' %}" role="button">Catalog create</a>     
         </div>
         <div class="justify-content-end">
+            <a class="btn btn-primary" href="{% url 'panel-page' %}" role="button">Back to Product list</a>
             <a class="btn btn-danger" href="{% url 'panel-logout' %}" role="button">Logout</a>
         </div>
     </div>
@@ -26,7 +27,13 @@
                 <th scope="col">Name</th>
                 <th scope="col">Social Network One</th>
                 <th scope="col">Social Network Two</th>
+                <th scope="col">Social Network Three</th>
                 <th scope="col">Email</th>
+                <th scope="col">address</th>
+                <th scope="col">city</th>
+                <th scope="col">zip_code</th>
+                <th scope="col">country</th>
+                <th scope="col">phone</th>
                 <th scope="col">Date Created</th>
                 <th scope="col">Date Updated</th>
                 <th scope="col"></th>
@@ -38,7 +45,13 @@
                     <td>{{catalog.name}}</td>
                     <td>{{catalog.social_network_one | safe}}</td>
                     <td>{{catalog.social_network_two}}</td>
+                    <td>{{catalog.social_network_three}}</td>
                     <td>{{catalog.email}}</td>
+                    <td>{{catalog.address}}</td>
+                    <td>{{catalog.city}}</td>
+                    <td>{{catalog.zip_code}}</td>
+                    <td>{{catalog.country}}</td>
+                    <td>{{catalog.phone}}</td>
                     <td>{{catalog.date_created}}</td>
                     <td>{{catalog.date_updated}}</td>
                     <td>
