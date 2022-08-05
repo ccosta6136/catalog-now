@@ -9,7 +9,9 @@
   
 </section>
 
-<a href="{% url 'panel-login' %}">Back to Login</a>
+<div class="container-fluid">
+
+    <a href="{% url 'panel-login' %}">Back to Login</a>
 
     <form method="post">
         {% csrf_token %}
