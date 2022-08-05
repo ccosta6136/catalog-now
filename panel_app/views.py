@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from catalog_now_app.models import Product, Publisher, Catalog
+from catalog_now_app.models import Product, Catalog
 from catalog_now_app.views import BaseView
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
@@ -47,8 +47,8 @@ class PanelLogin(LoginView, BaseView):
     next_page = reverse_lazy("panel-page")
 
 class PanelLogout(LogoutView, BaseView):
-    template_name = 'catalog_now_app/panel_logout.html'
-    next_page = reverse_lazy("panel-page")
+    #template_name = 'catalog_now_app/panel_logout.html'
+    next_page = reverse_lazy("panel-login")
 
 class SignUpView(SuccessMessageMixin, BaseView, CreateView):
     template_name = 'catalog_now_app/panel_create_account_form.html'
