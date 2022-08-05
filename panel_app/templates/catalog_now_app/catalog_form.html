@@ -4,7 +4,7 @@
 
 {% block main %}
 
-<a href="{% url 'user-detail' user.id %}">Volver a Profile</a>
+<a href="{% url 'catalog-page'%}">Back to catalog</a>
 
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}

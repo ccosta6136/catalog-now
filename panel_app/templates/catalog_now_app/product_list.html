@@ -2,50 +2,61 @@
 
 {% block main %}
 
-<br>
+<div class="container-fluid">
 
-<a class="btn btn-primary" href="{% url 'product-create' %}" role="button">New Product</a>
-<a class="btn btn-warning" href="{% url 'panel-logout' %}" role="button">Logout</a>
-<a class="btn btn-warning" href="{% url 'user-detail' user.id %}" role="button">Profile</a>
+    <br>
 
-<br>
-<br>
+    <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-start">
+            {% if perms.catalog_now_app.add_product %}
+                <a class="btn btn-primary" href="{% url 'product-create' %}" role="button">New Product</a>
+            {% endif %}
+        </div>
+        <div class="justify-content-end">
+            <a class="btn btn-secondary" href="{% url 'catalog-page' %}" role="button">Catalog</a>
+            <a class="btn btn-info" href="{% url 'user-detail' user.id %}" role="button">Profile</a>
+            <a class="btn btn-danger" href="{% url 'panel-logout' %}" role="button">Logout</a>
+        </div>
+    </div>
 
-<table class="table table-success table-striped">
-    <thead>
-        <tr>
-            <th scope="col">Product</th>
-            <th scope="col">Short Description</th>
-            <th scope="col">Description</th>
-            <th scope="col">Price</th>
-            <th scope="col">Image</th>
-            <th scope="col">Author</th>
-            <th scope="col">Date Created</th>
-            <th scope="col">Date Updated</th>
-            <th scope="col">Date Published</th>
-            <th scope="col"></th>
-        </tr>
-    </thead>
-    <tbody>
-        {%for product in products %}
+    <br>
+
+    <table class="table table-success table-striped">
+        <thead>
             <tr>
-                <td>{{product.product_title}}</td>
-                <td>{{product.short_description | safe}}</td>
-                <td>{{product.description | safe}}</td>
-                <td>{{product.price}}</td>
-                <td>{{product.image}}</td>
-                <td>{{product.author}}</td>
-                <td>{{product.date_created}}</td>
-                <td>{{product.date_updated}}</td>
-                <td>{{product.date_published}}</td>
-                <td>
-                    <a class="btn btn-info" href="{% url 'product-update' product.id %}" role="button">Edit</a>
-                    <a class="btn btn-warning" href="{% url 'product-delete' product.id %}" role="button">Delete</a>
-                </td>
+                <th scope="col">Product</th>
+                <th scope="col">Short Description</th>
+                <th scope="col">Price</th>
+                <th scope="col">Author</th>
+                <th scope="col">Date Created</th>
+                <th scope="col">Date Updated</th>
+                <th scope="col">Date Published</th>
+                <th scope="col"></th>
             </tr>
-        {% endfor %}
-    </tbody>
+        </thead>
+        <tbody>
+            {%for product in products %}
+                <tr>
+                    <td>{{product.product_title}}</td>
+                    <td>{{product.short_description | safe}}</td>
+                    <td>{{product.price}}</td>
+                    <td>{{product.author}}</td>
+                    <td>{{product.date_created}}</td>
+                    <td>{{product.date_updated}}</td>
+                    <td>{{product.date_published}}</td>
+                    <td>
+                        {% if perms.catalog_now_app.change_product %}
+                            <a class="btn btn-info" href="{% url 'product-update' product.id %}" role="button">Edit</a>
+                        {% endif %}
+                        {% if perms.catalog_now_app.delete_product %}
+                            <a class="btn btn-warning" href="{% url 'product-delete' product.id %}" role="button">Delete</a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
 
-</table>
+    </table>
+</div>
 
 {% endblock %}

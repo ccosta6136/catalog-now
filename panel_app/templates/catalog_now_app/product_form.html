@@ -11,27 +11,30 @@
 
 {% block main %}
 
-<a class="btn btn-primary" href="{% url 'panel-page' %}" role="button">Back to List</a>
+<div class="container-fluid">
 
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
+    <br>
 
-    <div class="d-flex justify-content-center">
-        <div class="d-flex flex-column">
+    <a class="btn btn-primary" href="{% url 'panel-page' %}" role="button">Back to List</a>
 
-            {{ form | crispy}}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
 
-            <br>
+        <div class="d-flex justify-content-center">
+            <div class="d-flex flex-column">
 
-            {% if request.resolver_match.url_name == "product-update" %}
-                <button type="submit" class="btn btn-primary">Update</button>
-            {% else %}
-                <button type="submit" class="btn btn-success">Create</button>
-            {% endif %}
+                {{ form | crispy}}
+
+                {% if request.resolver_match.url_name == "product-update" %}
+                    <button type="submit" class="btn btn-primary">Update</button>
+                {% else %}
+                    <button type="submit" class="btn btn-success">Create</button>
+                {% endif %}
+            </div>
         </div>
-    </div>
-</form>
+    </form>
 
-<br><br>
+    <br>
 
+</div>
 {% endblock %}
