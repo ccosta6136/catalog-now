@@ -46,8 +46,9 @@ class PanelLogin(LoginView, BaseView):
     template_name = 'catalog_now_app/panel_login.html'
     next_page = reverse_lazy("panel-page")
 
-class PanelLogout(LogoutView):
+class PanelLogout(LogoutView, BaseView):
     template_name = 'catalog_now_app/panel_logout.html'
+    next_page = reverse_lazy("panel-page")
 
 class SignUpView(SuccessMessageMixin, BaseView, CreateView):
     template_name = 'catalog_now_app/panel_create_account_form.html'
