@@ -10,17 +10,17 @@ class BaseView(View):
         context['catalog'] = Catalog.objects.order_by('date_updated').first()
         return context
 
-class MainPageView(TemplateView):
+class MainPageView(BaseView, TemplateView):
     template_name = "catalog_now_app/index.html" 
 
 class AboutUs(BaseView, TemplateView):
     template_name = "catalog_now_app/about_us.html"        
 
-class ProductDetailView(DetailView):
+class ProductDetailView(BaseView, DetailView):
     model = Product
     template_name = "catalog_now_app/product_detail.html"  
    
-class ProductListUser(ListView):
+class ProductListUser(BaseView,ListView):
     model = Product
     template_name = "catalog_now_app/list_products.html"
     context_object_name = "products"
