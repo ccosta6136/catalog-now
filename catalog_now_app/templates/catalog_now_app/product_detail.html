@@ -12,7 +12,16 @@ Detalle productos
 
 {% block main %}
 
-
+<section id="hero" class="hero d-flex align-items-center justify-content-center">
+    <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+      <h2 data-aos="fade-up" class="aos-init aos-animate text-justify">
+        
+        <div class="section-header">
+           Detalle Producto
+        </div>
+      </h2>
+      </div>
+  </section>
 <section id="features" class="features">
     <div class="section-header">
         <span>Detalle {{product.product_title}}</span>
@@ -29,7 +38,7 @@ Detalle productos
                     {{product.description | safe}} 
                 </p>
                 <ul>
-                    <li><i class="bi bi-currency-dollar" style="float: left;""></i> <h5 style="float: left;">{{product.price}}</h5></li>
+                    <li><i class="bi bi-currency-dollar" style="float: left;"></i> <h5 style="float: left;">{{product.price}}</h5></li>
                     <li style="margin:30px 20px;"> <a class="btn btn-dark btn-md" href="{% url 'product-list' %}" role="button" style="float: right;">Volver al listado</a></li>
                 </ul>
               

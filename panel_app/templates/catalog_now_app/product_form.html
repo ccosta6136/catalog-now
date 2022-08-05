@@ -11,11 +11,7 @@
 
 {% block main %}
 
-<div class="container-fluid">
-
-    <br>
-
-    <a class="btn btn-primary" href="{% url 'panel-page' %}" role="button">Back to List</a>
+<a class="btn btn-primary" href="{% url 'panel-page' %}" role="button">Back to List</a>
 
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
