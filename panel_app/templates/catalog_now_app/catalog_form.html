@@ -3,8 +3,11 @@
 {% load crispy_forms_tags %}
 
 {% block main %}
+<section id="hero" class="hero d-flex align-items-center justify-content-center">
+  
+</section>
 
-<a href="{% url 'user-detail' user.id %}">Volver a Profile</a>
+<a href="{% url 'catalog-page'%}">Back to catalog</a>
 
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}

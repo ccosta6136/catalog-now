@@ -1,0 +1,54 @@
+{% extends "catalog_now_app/base.html" %}
+
+{% block main %}
+<section id="hero" class="hero d-flex align-items-center justify-content-center">
+  
+</section>
+
+<div class="container-fluid">
+
+    <br>
+
+    <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-start">
+            <a class="btn btn-primary" href="{% url 'catalog-create' %}" role="button">Catalog create</a>     
+        </div>
+        <div class="justify-content-end">
+            <a class="btn btn-danger" href="{% url 'panel-logout' %}" role="button">Logout</a>
+        </div>
+    </div>
+
+    <br>
+
+    <table class="table table-success table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Social Network One</th>
+                <th scope="col">Social Network Two</th>
+                <th scope="col">Email</th>
+                <th scope="col">Date Created</th>
+                <th scope="col">Date Updated</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for catalog in catalogs %}
+                <tr>
+                    <td>{{catalog.name}}</td>
+                    <td>{{catalog.social_network_one | safe}}</td>
+                    <td>{{catalog.social_network_two}}</td>
+                    <td>{{catalog.email}}</td>
+                    <td>{{catalog.date_created}}</td>
+                    <td>{{catalog.date_updated}}</td>
+                    <td>
+                        <a class="btn btn-info" href="{% url 'catalog-update' catalog.id %}" role="button">Edit</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+</div>
+
+{% endblock %}
