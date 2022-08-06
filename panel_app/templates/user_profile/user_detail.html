@@ -3,39 +3,56 @@
 {% load crispy_forms_tags %}
 
 {% block main %}
-<section id="hero" class="hero d-flex align-items-center justify-content-center">
-  
-</section>
+
+<section id="hero" class="hero d-flex align-items-center justify-content-center"></section>
 
 <br>
 
 <a class="btn btn-primary" href="{% url 'panel-page' %}" role="button">Back to Product List</a>
-<a class="btn btn-success" href="{% url 'user-update' user.id %}" role="button">Update Profile</a>
 
 <div class="d-flex justify-content-center">
     <div class="d-flex flex-column">
-        <div class="form-floating mb-2">
-            <input type="text" readonly class="form-control-plaintext" id="floatingPlaintextInput" placeholder="" value="{{user.first_name}}">
-            <label for="floatingPlaintextInput">First Name</label>
-        </div>
 
-        <div class="form-floating mb-2">
-            <input type="text" readonly class="form-control-plaintext" id="floatingPlaintextInput" placeholder="" value="{{user.last_name}}">
-            <label for="floatingPlaintextInput">Last Name</label>
-        </div>
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <a href="{% url 'publisher-update' publisher.id %}"><img src="{{ publisher.avatar.url }}" class="img-thumbnail rounded-start" /></a>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                    <div class="form-floating">
+                        <input type="text" readonly class="form-control-plaintext" id="floatingPlaintextInput" placeholder="" value="{{user.first_name}}">
+                        <label for="floatingPlaintextInput">First Name</label>
+                    </div>
+            
+                    <div class="form-floating">
+                        <input type="text" readonly class="form-control-plaintext" id="floatingPlaintextInput" placeholder="" value="{{user.last_name}}">
+                        <label for="floatingPlaintextInput">Last Name</label>
+                    </div>
+            
+                    <div class="form-floating">
+                        <input type="text" readonly class="form-control-plaintext" id="floatingPlaintextInput" placeholder="" value="{{user.email}}">
+                        <label for="floatingPlaintextInput">Email</label>
+                    </div>
+            
+                    <div class="form-floating">
+                        <input type="text" readonly class="form-control-plaintext" id="floatingPlaintextInput" placeholder="" value="{{user.username}}">
+                        <label for="floatingPlaintextInput">Username</label>
+                    </div> 
+                </div>
+              </div>
+              <div class="d-flex flex-column">
+                <a class="btn btn-success" href="{% url 'user-update' user.id %}" role="button">Edit Profile</a>
+            </div>
+            </div>
+          </div>
 
-        <div class="form-floating mb-2">
-            <input type="text" readonly class="form-control-plaintext" id="floatingPlaintextInput" placeholder="" value="{{user.email}}">
-            <label for="floatingPlaintextInput">Email</label>
-        </div>
-
-        <div class="form-floating mb-2">
-            <input type="text" readonly class="form-control-plaintext" id="floatingPlaintextInput" placeholder="" value="{{user.username}}">
-            <label for="floatingPlaintextInput">Username</label>
-        </div> 
+        
+        <br>
     </div>
 </div>
 
-<img height="128" src="{{ object.avatar.url }}" />
+
+
 
 {% endblock %}
