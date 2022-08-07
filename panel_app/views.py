@@ -52,7 +52,7 @@ class PanelLogin(BaseView, LoginView):
     template_name = 'catalog_now_app/panel_login.html'
     next_page = reverse_lazy("panel-page")
 
-class PanelLogout(LogoutView, BaseView):
+class PanelLogout(BaseView, LogoutView):
     #template_name = 'catalog_now_app/panel_logout.html'
     next_page = reverse_lazy("panel-login")
 
@@ -88,9 +88,9 @@ class CatalogList(LoginRequiredMixin, BaseView, ListView):
 class CatalogCreate(LoginRequiredMixin, BaseView, CreateView):
     model = Catalog
     success_url = reverse_lazy("catalog-page")
-    fields = ['name','social_network_one','social_network_two','email']
+    fields = ['name','social_network_one','social_network_two', 'social_network_three','email', 'address', 'city', 'zip_code', 'country', 'phone']
 
 class CatalogUpdate(LoginRequiredMixin, BaseView, UpdateView):
     model = Catalog
     success_url = reverse_lazy("catalog-page")
-    fields = ['name','social_network_one','social_network_two','email']
+    fields = ['name','social_network_one','social_network_two', 'social_network_three','email', 'address', 'city', 'zip_code', 'country', 'phone']
