@@ -15,10 +15,16 @@ from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
-class ProductList(LoginRequiredMixin,BaseView, ListView):
+class ProductList(LoginRequiredMixin, BaseView, ListView):
     queryset = Product.objects.all()
     #model = Product
     template_name = "catalog_now_app/product_list.html"
+    context_object_name = "products"
+
+class AdminProducts(LoginRequiredMixin, BaseView, ListView):
+    queryset = Product.objects.all()
+    #model = Product
+    template_name = "catalog_now_app/admin_products.html"
     context_object_name = "products"
 
 class ProductDetail(LoginRequiredMixin, BaseView, DetailView):
@@ -42,7 +48,7 @@ class ProductDelete(LoginRequiredMixin, BaseView, DeleteView):
     success_url = reverse_lazy("panel-page")
     permission_required = ("catalog_now_app.delete_product")
 
-class PanelLogin(LoginView, BaseView):
+class PanelLogin(BaseView, LoginView):
     template_name = 'catalog_now_app/panel_login.html'
     next_page = reverse_lazy("panel-page")
 

@@ -1,0 +1,60 @@
+{% extends "catalog_now_app/base.html" %}
+{% load static %}
+
+{% block title %}
+   Admin productos
+{% endblock title %}
+
+{% block title_page %}
+Admin productos
+{% endblock title_page %}
+
+
+{% block main %}
+<section id="hero" class="hero d-flex align-items-center justify-content-center">
+    <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+      <h2 data-aos="fade-up" class="aos-init aos-animate text-justify">
+        
+        <div class="section-header">
+          Panel de Administración
+        </div>
+        
+        
+
+
+
+      </h2>
+      </div>
+  </section>
+
+<section id="featured-services" class="featured-services">
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-6 col-md-6 service-item d-flex pricing-item justify-content-center" data-aos="fade-up">
+          <div class="icon flex-shrink-0"><i class="bi bi-pip-fill"></i></div>
+          <div>
+            <h4 class="title">Catalogo</h4>
+            <p class="description">Crear, Actualiza o edita tu catalgo</p>
+            <a href="{% url 'catalog-page' %}" class="readmore stretched-link"><span>Ingresar</span><i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+        <!-- End Service Item -->
+
+        <div class="col-lg-6 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+          <div class="icon flex-shrink-0"><i class="bi bi-card-list"></i></div>
+          <div>
+            <h4 class="title">Administrar Productos</h4>
+            <p class="description">Crear, Actualiza, borra  o edita tus prdocutos</p>
+            <a href="{% url 'panel-page' %}" class="readmore stretched-link"><span>Ingresar</span><i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div><!-- End Service Item -->
+
+        
+      </div>
+
+    </div>
+  </section>
+
+{% endblock %}

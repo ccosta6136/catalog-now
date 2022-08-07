@@ -2,23 +2,37 @@
 
 {% block main %}
 <section id="hero" class="hero d-flex align-items-center justify-content-center">
-  
-</section>
+    <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+      <h2 data-aos="fade-up" class="aos-init aos-animate text-justify">
+        
+        <div class="section-header">
+        Admin de productos
+        </div>
+        
+        
+
+
+
+      </h2>
+      </div>
+  </section>
 
 <div class="container-fluid">
-
-    <br>
+   
+    
+    
 
     <div class="d-flex justify-content-between">
         <div class="d-flex justify-content-start">
+            <a href="{% url 'product-admin'%}" class="btn btn-outline-secondary mt-2 me-2">Volver a panel</a>
             {% if perms.catalog_now_app.add_product %}
-                <a class="btn btn-primary" href="{% url 'product-create' %}" role="button">New Product</a>
+                <a class="btn btn-primary mt-2" href="{% url 'product-create' %}" role="button">New Product</a>
             {% endif %}
         </div>
         <div class="justify-content-end">
-            <a class="btn btn-secondary" href="{% url 'catalog-page' %}" role="button">Catalog</a>
-            <a class="btn btn-info" href="{% url 'user-detail' user.id %}" role="button">Profile</a>
-            <a class="btn btn-danger" href="{% url 'panel-logout' %}" role="button">Logout</a>
+            <a class="btn btn-secondary mt-2" href="{% url 'catalog-page' %}" role="button">Catalog</a>
+            <a class="btn btn-info mt-2" href="{% url 'user-detail' user.id %}" role="button">Profile</a>
+            <a class="btn btn-danger mt-2" href="{% url 'panel-logout' %}" role="button">Logout</a>
         </div>
     </div>
 
@@ -58,8 +72,9 @@
                 </tr>
             {% endfor %}
         </tbody>
-
+     
     </table>
+    <a href="{% url 'product-admin'%}" class="btn btn-outline-secondary mt-2 mb-2 me-2">Volver a panel</a>
 </div>
 
 {% endblock %}
