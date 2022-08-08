@@ -41,12 +41,12 @@ Detalle productos
                     <li><i class="bi bi-currency-dollar" style="float: left;"></i> <h5 style="float: left;">{{product.price}}</h5></li>
                     <li style="margin:30px 20px;"> <a class="btn btn-dark btn-md" href="{% url 'product-list' %}" role="button" style="float: right;">Volver al listado</a></li>
                 </ul>
-              
+                {% if catalog.whatsapp_phone_number %}
+                    <a class="btn btn-success btn-md" href="https://api.whatsapp.com/send?phone={{catalog.whatsapp_phone_number}}&text=Hola! Estoy interesado en el producto {{product.product_title}} - Precio ${{product.price}}" target="_blank">Contactanos por Whatsapp</a>
+                {% endif %}
             </div>
         </div>
     </div>
 </section>    
-
-
 
 {% endblock %}

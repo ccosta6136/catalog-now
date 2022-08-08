@@ -7,19 +7,26 @@
         <h2 data-aos="fade-up" class="aos-init aos-animate text-justify"> 
             <div class="section-header">
                 Admin catalogo
+                <br><br>
+                <p> Administre todo lo referente al nombre del catalogo, redes sociales y su dirección y teléfono de contacto desde aquí.</p>
             </div>
         </h2>
     </div>
 </section>
 
+{% include 'catalog_now_app/message.html' %}
+
 <div class="container-fluid">
 
     <br>
 
+    <div class="alert alert-warning" role="alert">
+       <p><small><strong>INFO:</strong> El registro que tenga <em>"Date Updated"</em> con fecha más actual será el utilizado por la web.</small></p>
+    </div>
+
     <div class="d-flex justify-content-between">
         <div class="d-flex justify-content-start">
-            <a href="{% url 'product-admin'%}" class="btn btn-outline-secondary  me-2">Volver al panel de administración</a>
-             
+            <a href="{% url 'product-admin'%}" class="btn btn-outline-secondary me-2">Volver a panel</a>    
         </div>
         <div class="justify-content-end">
             <a class="btn btn-primary" href="{% url 'catalog-create' %}" role="button">Crear nuevo Catalogo</a>    
@@ -32,15 +39,10 @@
         <thead>
             <tr>
                 <th scope="col">Name</th>
-                <th scope="col">Social Network One</th>
-                <th scope="col">Social Network Two</th>
-                <th scope="col">Social Network Three</th>
+                <th scope="col">Social Network</th>
                 <th scope="col">Email</th>
-                <th scope="col">address</th>
-                <th scope="col">city</th>
-                <th scope="col">zip_code</th>
-                <th scope="col">country</th>
-                <th scope="col">phone</th>
+                <th scope="col">Address</th>
+                <th scope="col">Phone</th>
                 <th scope="col">Date Created</th>
                 <th scope="col">Date Updated</th>
                 <th scope="col"></th>
@@ -50,14 +52,9 @@
             {%for catalog in catalogs %}
                 <tr>
                     <td>{{catalog.name}}</td>
-                    <td>{{catalog.social_network_one | safe}}</td>
-                    <td>{{catalog.social_network_two}}</td>
-                    <td>{{catalog.social_network_three}}</td>
+                    <td>{{catalog.social_network_one | safe}}<br>{{catalog.social_network_two | safe}}<br>{{catalog.social_network_three | safe}}</td>
                     <td>{{catalog.email}}</td>
-                    <td>{{catalog.address}}</td>
-                    <td>{{catalog.city}}</td>
-                    <td>{{catalog.zip_code}}</td>
-                    <td>{{catalog.country}}</td>
+                    <td>{{catalog.address}}, {{catalog.city}} - {{catalog.zip_code}}, {{catalog.country}}</td>
                     <td>{{catalog.phone}}</td>
                     <td>{{catalog.date_created}}</td>
                     <td>{{catalog.date_updated}}</td>
@@ -67,8 +64,9 @@
                 </tr>
             {% endfor %}
         </tbody>
-
     </table>
+
+    <a href="{% url 'product-admin'%}" class="btn btn-outline-secondary mt-2 mb-2 me-2">Volver a panel</a>
 </div>
 
 {% endblock %}

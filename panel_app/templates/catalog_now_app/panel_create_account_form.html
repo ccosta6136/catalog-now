@@ -8,9 +8,11 @@
 
 <section id="hero" class="hero d-flex align-items-center justify-content-center"></section>
 
+{% include 'catalog_now_app/message.html' %}
+
 <div class="container-fluid">
 
-    <a href="{% url 'panel-login' %}">Volver al login</a>
+    <a href="{% url 'panel-login'%}" class="btn btn-outline-secondary mt-2 me-2">Volver al login</a>
 
     <form method="post">
         {% csrf_token %}

@@ -7,10 +7,14 @@
         <h2 data-aos="fade-up" class="aos-init aos-animate text-justify">
             <div class="section-header">
                 Admin de productos
+                <br><br>
+                <p> Agregue nuevos productos, mofique o elimine productos existentes.</p>
             </div>
         </h2>
     </div>
-  </section>
+</section>
+
+{% include 'catalog_now_app/message.html' %}
 
 <div class="container-fluid">
 
@@ -36,7 +40,6 @@
                 <th scope="col">Author</th>
                 <th scope="col">Date Created</th>
                 <th scope="col">Date Updated</th>
-                <th scope="col">Date Published</th>
                 <th scope="col"></th>
             </tr>
         </thead>
@@ -49,7 +52,6 @@
                     <td>{{product.author}}</td>
                     <td>{{product.date_created}}</td>
                     <td>{{product.date_updated}}</td>
-                    <td>{{product.date_published}}</td>
                     <td>
                         {% if perms.catalog_now_app.change_product %}
                             <a class="btn btn-info" href="{% url 'product-update' product.id %}" role="button">Editar</a>
