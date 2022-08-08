@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from catalog_now_app.models import Product, Publisher, Catalog
+from catalog_now_app.models import Product, Catalog
 from catalog_now_app.views import BaseView
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
@@ -15,12 +15,20 @@ from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
-class ProductList(LoginRequiredMixin,BaseView, ListView):
+class ProductList(LoginRequiredMixin, BaseView, ListView):
     queryset = Product.objects.all()
     #model = Product
     template_name = "catalog_now_app/product_list.html"
     context_object_name = "products"
 
+<<<<<<< HEAD
+=======
+class AdminProducts(LoginRequiredMixin, BaseView, ListView):
+    queryset = Product.objects.all()
+    #model = Product
+    template_name = "catalog_now_app/admin_products.html"
+    context_object_name = "products"
+>>>>>>> origin/main
 
 class ProductDetail(LoginRequiredMixin, BaseView, DetailView):
     model = Product 

@@ -6,7 +6,8 @@
 
 <section id="hero" class="hero d-flex align-items-center justify-content-center"></section>
 
-<a href="{% url 'catalog-page'%}">Back to catalog</a>
+<a href="{% url 'catalog-page'%}" class="btn btn-outline-secondary mt-2  me-2 ms-2">Volver al listado</a>
+
 
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}

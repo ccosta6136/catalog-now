@@ -2,7 +2,15 @@
 
 {% block main %}
 
-<section id="hero" class="hero d-flex align-items-center justify-content-center"></section>
+<section id="hero" class="hero d-flex align-items-center justify-content-center">
+    <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+        <h2 data-aos="fade-up" class="aos-init aos-animate text-justify"> 
+            <div class="section-header">
+                Admin catalogo
+            </div>
+        </h2>
+    </div>
+  </section>
 
 <div class="container-fluid">
 
@@ -10,6 +18,7 @@
 
     <div class="d-flex justify-content-between">
         <div class="d-flex justify-content-start">
+            <a href="{% url 'product-admin'%}" class="btn btn-outline-secondary  me-2">Volver a panel</a>
             <a class="btn btn-primary" href="{% url 'catalog-create' %}" role="button">Catalog create</a>     
         </div>
         <div class="justify-content-end">
