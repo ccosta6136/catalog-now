@@ -28,7 +28,6 @@ class Product(models.Model):
         return f"{self.product_title}"
 
 
-    
 class Catalog(models.Model):
     name = models.CharField(max_length=20)
     social_network_one = models.URLField(null=True)
