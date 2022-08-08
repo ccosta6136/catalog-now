@@ -8,18 +8,17 @@
 
 <br>
 
-<a class="btn btn-primary" href="{% url 'user-detail' user.id %}" role="button">Back to Profile</a>
+<a class="btn btn-primary" href="{% url 'user-detail' user.id %}" role="button">Voler al perfil</a>
 
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="d-flex justify-content-center">
         <div class="d-flex flex-column">
             {{ form | crispy }}
-            <button type="submit" class="btn btn-success">Save</button>
+            <button type="submit" class="btn btn-success">Guardar</button>
             <br>
         </div>
     </div>
 </form>
 
 {% endblock %}
-

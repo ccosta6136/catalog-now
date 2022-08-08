@@ -3,8 +3,8 @@ from django.urls import path
 from panel_app.views import CatalogCreate, CatalogList, CatalogUpdate, PanelLogin, PanelLogout, ProductCreate, ProductDelete, ProductList, ProductUpdate, PublisherUpdate, SignUpView, UserProfile, UserUpdate, AdminProducts
 
 urlpatterns = [
-    path('product/adminlist', ProductList.as_view(), name='panel-page'),
     path('', AdminProducts.as_view(), name ="product-admin" ),
+    path('product/adminlist', ProductList.as_view(), name='panel-page'),
     path('product/create', ProductCreate.as_view(), name ="product-create" ),
     path('product/<pk>/update', ProductUpdate.as_view(), name ="product-update" ),
     path('Product/<pk>/delete', ProductDelete.as_view(), name ="product-delete" ),

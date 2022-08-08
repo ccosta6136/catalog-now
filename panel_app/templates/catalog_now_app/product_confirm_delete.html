@@ -4,19 +4,19 @@
 
 <section id="hero" class="hero d-flex align-items-center justify-content-center"></section>
 
-    <br>
-    
-    <a type="button" href = "{% url 'panel-page' %}" class="btn btn-primary" >Back to Panel</a>
-    
-    <br><br>
+<br>
 
-    <form method="post">
-        {% csrf_token %}
-        <p>Are you sure you want to delete "{{ object }}"?</p>
-        {{ form }}
-        <button type="submit" class="btn btn-danger">Confirm</button>
-    </form>
+<a type="button" href = "{% url 'panel-page' %}" class="btn btn-primary" >Volver al listado de productos</a>
 
-    <br>
+<br><br>
+
+<form method="post">
+    {% csrf_token %}
+    <p>Are you sure you want to delete "{{ object }}"?</p>
+    {{ form }}
+    <button type="submit" class="btn btn-danger">Confirmar</button>
+</form>
+
+<br>
     
 {% endblock %}

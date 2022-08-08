@@ -10,7 +10,7 @@
             </div>
         </h2>
     </div>
-  </section>
+</section>
 
 <div class="container-fluid">
 
@@ -18,12 +18,11 @@
 
     <div class="d-flex justify-content-between">
         <div class="d-flex justify-content-start">
-            <a href="{% url 'product-admin'%}" class="btn btn-outline-secondary  me-2">Volver a panel</a>
-            <a class="btn btn-primary" href="{% url 'catalog-create' %}" role="button">Catalog create</a>     
+            <a href="{% url 'product-admin'%}" class="btn btn-outline-secondary  me-2">Volver al panel de administración</a>
+             
         </div>
         <div class="justify-content-end">
-            <a class="btn btn-primary" href="{% url 'panel-page' %}" role="button">Back to Product list</a>
-            <a class="btn btn-danger" href="{% url 'panel-logout' %}" role="button">Logout</a>
+            <a class="btn btn-primary" href="{% url 'catalog-create' %}" role="button">Crear nuevo Catalogo</a>    
         </div>
     </div>
 
@@ -63,7 +62,7 @@
                     <td>{{catalog.date_created}}</td>
                     <td>{{catalog.date_updated}}</td>
                     <td>
-                        <a class="btn btn-info" href="{% url 'catalog-update' catalog.id %}" role="button">Edit</a>
+                        <a class="btn btn-info" href="{% url 'catalog-update' catalog.id %}" role="button">Editar</a>
                     </td>
                 </tr>
             {% endfor %}

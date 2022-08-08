@@ -8,7 +8,7 @@
 
 <br>
 
-<a class="btn btn-primary" href="{% url 'panel-page' %}" role="button">Back to Product List</a>
+<a class="btn btn-primary" href="{% url 'product-admin' %}" role="button">Volver al panel de administración</a>
 
 <div class="d-flex justify-content-center">
     <div class="d-flex flex-column">
@@ -42,17 +42,12 @@
                 </div>
               </div>
               <div class="d-flex flex-column">
-                <a class="btn btn-success" href="{% url 'user-update' user.id %}" role="button">Edit Profile</a>
+                <a class="btn btn-success" href="{% url 'user-update' user.id %}" role="button">Editar</a>
             </div>
             </div>
           </div>
-
-        
         <br>
     </div>
 </div>
-
-
-
 
 {% endblock %}
