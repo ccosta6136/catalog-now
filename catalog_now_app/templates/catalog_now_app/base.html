@@ -114,9 +114,15 @@
           </a>
           <p>Nos pueden encuentra en nuestra redes sociales</p>
           <div class="social-links d-flex mt-4">
-            <a href="{{catalog.social_network_one}}" class="twitter" target="_blank"><i class="bi bi-twitter"></i></a>
-            <a href="{{catalog.social_network_two}}" class="instagram" target="_blank"><i class="bi bi-instagram"></i></a>
-            <a href="{{catalog.social_network_three}}" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
+            {% if catalog.social_network_twitter %}
+              <a href="{{catalog.social_network_twitter}}" class="twitter" target="_blank"><i class="bi bi-twitter"></i></a>
+            {% endif %}
+            {% if catalog.social_network_instagram %}
+              <a href="{{catalog.social_network_instagram}}" class="instagram" target="_blank"><i class="bi bi-instagram"></i></a>
+            {% endif %}
+            {% if catalog.social_network_linkedin %}
+              <a href="{{catalog.social_network_linkedin}}" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
+            {% endif %}
           </div>
         </div>
 
