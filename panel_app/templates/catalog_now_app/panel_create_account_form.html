@@ -8,13 +8,7 @@
 
 <section id="hero" class="hero d-flex align-items-center justify-content-center"></section>
 
-{% if messages %}
-     {% for message in messages %}
-         <div class="text-center alert alert-{{ message.tags }}">
-             {{ message|safe }}
-         </div>
-     {% endfor %}
-{% endif %}
+{% include 'catalog_now_app/message.html' %}
 
 <div class="container-fluid">
 

@@ -22,13 +22,7 @@
     </div>
 </section>
 
-{% if messages %}
-    {% for message in messages %}
-        <div class="text-center alert alert-{{ message.tags }}">
-            {{ message|safe }}
-        </div>
-    {% endfor %}
-{% endif %}
+{% include 'catalog_now_app/message.html' %}
 
 <section id="featured-services" class="featured-services">
     <div class="container">
