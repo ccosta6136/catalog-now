@@ -69,7 +69,7 @@ class PanelLogout(SuccessMessageMixin, BaseView, LogoutView):
 
 class SignUpView(SuccessMessageMixin, BaseView, CreateView):
     template_name = 'catalog_now_app/panel_create_account_form.html'
-    success_url = reverse_lazy('panel-page')
+    success_url = reverse_lazy('product-admin')
     form_class = UserCreationForm
     success_message = "¡¡ Cuenta creada satisfactoriamente !!"
     
