@@ -77,9 +77,8 @@
               <li class="dropdown">
                     <a  href="#"><i class="bi bi-person-circle"   style="font-size:28px ; padding-right: 5px; color:#007aff ;"></i>  {{user.username}}</a>
                     <ul>
-                      <li><a href="{% url 'user-detail' user.id %}">Profile</a></li>
-                      <li><a href="#">Avatar</a></li>
-                      <li><a href="{% url 'product-admin' %}">Admin Productos</a></li>
+                      <li><a href="{% url 'user-detail' user.id %}">Perfil</a></li>
+                      <li><a href="{% url 'product-admin' %}">Panel de Administración</a></li>
                       <li><a href="{% url 'panel-logout' %}">Log Out</a></li>
                     </ul>
               </li>

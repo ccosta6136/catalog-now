@@ -12,6 +12,7 @@ class Publisher(models.Model):
     def __str__(self):
         return f"{self.user.username}"
 
+
 class Product(models.Model):
     product_title = models.CharField(max_length=100)
     short_description = models.CharField(max_length=180)
@@ -19,7 +20,6 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=8, decimal_places=2)
     image = models.ImageField(upload_to="products", null=True, blank=True)
     author = models.ForeignKey(Publisher, on_delete=models.DO_NOTHING)
-    is_headline= models.BooleanField()
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
     date_published = models.DateTimeField()
@@ -27,7 +27,7 @@ class Product(models.Model):
     def __str__(self):
         return f"{self.product_title}"
 
-
+    
 class Catalog(models.Model):
     name = models.CharField(max_length=20)
     social_network_one = models.URLField(null=True)

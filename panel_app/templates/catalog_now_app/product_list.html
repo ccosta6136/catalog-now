@@ -1,38 +1,27 @@
 {% extends "catalog_now_app/base.html" %}
 
 {% block main %}
+
 <section id="hero" class="hero d-flex align-items-center justify-content-center">
     <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-      <h2 data-aos="fade-up" class="aos-init aos-animate text-justify">
-        
-        <div class="section-header">
-        Admin de productos
-        </div>
-        
-        
-
-
-
-      </h2>
-      </div>
+        <h2 data-aos="fade-up" class="aos-init aos-animate text-justify">
+            <div class="section-header">
+                Admin de productos
+            </div>
+        </h2>
+    </div>
   </section>
 
 <div class="container-fluid">
-   
-    
-    
 
     <div class="d-flex justify-content-between">
         <div class="d-flex justify-content-start">
             <a href="{% url 'product-admin'%}" class="btn btn-outline-secondary mt-2 me-2">Volver a panel</a>
-            {% if perms.catalog_now_app.add_product %}
-                <a class="btn btn-primary mt-2" href="{% url 'product-create' %}" role="button">New Product</a>
-            {% endif %}
         </div>
         <div class="justify-content-end">
-            <a class="btn btn-secondary mt-2" href="{% url 'catalog-page' %}" role="button">Catalog</a>
-            <a class="btn btn-info mt-2" href="{% url 'user-detail' user.id %}" role="button">Profile</a>
-            <a class="btn btn-danger mt-2" href="{% url 'panel-logout' %}" role="button">Logout</a>
+            {% if perms.catalog_now_app.add_product %}
+                <a class="btn btn-primary mt-2" href="{% url 'product-create' %}" role="button">Agregar producto</a>
+            {% endif %}
         </div>
     </div>
 
@@ -63,10 +52,10 @@
                     <td>{{product.date_published}}</td>
                     <td>
                         {% if perms.catalog_now_app.change_product %}
-                            <a class="btn btn-info" href="{% url 'product-update' product.id %}" role="button">Edit</a>
+                            <a class="btn btn-info" href="{% url 'product-update' product.id %}" role="button">Editar</a>
                         {% endif %}
                         {% if perms.catalog_now_app.delete_product %}
-                            <a class="btn btn-warning" href="{% url 'product-delete' product.id %}" role="button">Delete</a>
+                            <a class="btn btn-warning" href="{% url 'product-delete' product.id %}" role="button">Eliminar</a>
                         {% endif %}
                     </td>
                 </tr>
