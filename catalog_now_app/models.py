@@ -3,9 +3,10 @@ from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
 
 
+
 class Publisher(models.Model):
     user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-    avatar = models.ImageField(upload_to="avatars", null=True, blank=True)
+    avatar = models.ImageField(upload_to="avatars", null=True, blank=True, default='default.jpg')
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
 
@@ -29,7 +30,7 @@ class Product(models.Model):
 
     
 class Catalog(models.Model):
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=90)
     social_network_one = models.URLField(null=True)
     social_network_two = models.URLField(null=True)
     social_network_three = models.URLField(null=True)

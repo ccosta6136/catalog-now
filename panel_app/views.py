@@ -17,14 +17,12 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 class ProductList(LoginRequiredMixin, BaseView, ListView):
     queryset = Product.objects.all()
-    #model = Product
     template_name = "catalog_now_app/product_list.html"
     context_object_name = "products"
 
 
 class AdminProducts(LoginRequiredMixin, BaseView, ListView):
     queryset = Product.objects.all()
-    #model = Product
     template_name = "catalog_now_app/admin_products.html"
     context_object_name = "products"
 
@@ -60,7 +58,6 @@ class PanelLogin(BaseView, LoginView):
 
 
 class PanelLogout(BaseView, LogoutView):
-    #template_name = 'catalog_now_app/panel_logout.html'
     next_page = reverse_lazy("panel-login")
 
 
@@ -68,7 +65,7 @@ class SignUpView(SuccessMessageMixin, BaseView, CreateView):
     template_name = 'catalog_now_app/panel_create_account_form.html'
     success_url = reverse_lazy('panel-page')
     form_class = UserCreationForm
-    success_message = "¡¡ Se creo tu perfil satisfactoriamente !!"
+    
 
 class UserProfile(LoginRequiredMixin, UserPassesTestMixin,  BaseView, DetailView):
     model = User
