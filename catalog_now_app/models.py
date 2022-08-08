@@ -23,7 +23,6 @@ class Product(models.Model):
     author = models.ForeignKey(Publisher, on_delete=models.DO_NOTHING)
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
-    date_published = models.DateTimeField()
 
     def __str__(self):
         return f"{self.product_title}"

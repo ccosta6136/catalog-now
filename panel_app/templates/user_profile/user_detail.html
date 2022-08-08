@@ -8,7 +8,7 @@
 
 <br>
 
-<a class="btn btn-primary" href="{% url 'product-admin' %}" role="button">Volver al panel de administración</a>
+<a class="btn btn-outline-secondary mt-2 me-2 ms-2" href="{% url 'product-admin' %}" role="button">Volver a panel</a>
 
 <div class="d-flex justify-content-center">
     <div class="d-flex flex-column">
@@ -18,6 +18,8 @@
               <div class="col-md-4"> 
                     {% if publisher.id %}
                         <a href="{% url 'publisher-update' publisher.id %}"><img src="{{ publisher.avatar.url }}" class="img-thumbnail rounded-start" /></a>
+                    {% else %}
+                        <a href=""><img src="/media/default.jpg" class="img-thumbnail rounded-start" /></a>
                     {% endif %}
               </div>
               <div class="col-md-8">

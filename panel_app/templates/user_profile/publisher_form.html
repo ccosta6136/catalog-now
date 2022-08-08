@@ -8,7 +8,7 @@
 
 <br>
 
-<a class="btn btn-primary" href="{% url 'user-detail' user.id %}" role="button">Voler al perfil</a>
+<a class="btn btn-outline-secondary mt-2 me-2 ms-2" href="{% url 'user-detail' user.id %}" role="button">Voler al perfil</a>
 
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}

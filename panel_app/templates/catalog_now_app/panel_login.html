@@ -6,12 +6,21 @@
 
 <section id="hero" class="hero d-flex align-items-center justify-content-center"></section>
 
+{% if messages %}
+     {% for message in messages %}
+         <div class="text-center alert alert-{{ message.tags }}">
+             {{ message|safe }}
+         </div>
+     {% endfor %}
+{% endif %}
+
+
 <br>
 
 <form method="POST">
     {% csrf_token %}
     <div class="d-flex justify-content-center">
-        <div class="d-flex flex-column">
+        <div class="d-flex flex-column col-2">
             {{form|crispy}}
             <button type="submit" class="btn btn-primary">Login</button>
         </div>
@@ -22,7 +31,7 @@
 
 <div class="d-flex justify-content-center">
     <div class="d-flex flex-column">
-        <a href="{% url 'panel-signup' %}">Crear una cuenta</a>
+        <a href="{% url 'panel-signup' %}"><small>Crear cuenta</small></a>
     </div>
 </div>
 

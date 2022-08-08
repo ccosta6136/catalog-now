@@ -21,10 +21,11 @@ class ProductList(LoginRequiredMixin, BaseView, ListView):
     context_object_name = "products"
 
 
-class AdminProducts(LoginRequiredMixin, BaseView, ListView):
+class AdminProducts(LoginRequiredMixin, SuccessMessageMixin,  BaseView, ListView):
     queryset = Product.objects.all()
     template_name = "catalog_now_app/admin_products.html"
     context_object_name = "products"
+    success_message = "¡¡ Login satisfactoriamente !!"
 
 
 class ProductDetail(LoginRequiredMixin, BaseView, DetailView):
@@ -35,14 +36,14 @@ class ProductDetail(LoginRequiredMixin, BaseView, DetailView):
 class ProductCreate(LoginRequiredMixin, PermissionRequiredMixin, BaseView, CreateView):
     model = Product
     success_url = reverse_lazy("panel-page")
-    fields = ['product_title','short_description','description','price','image','author','date_published']
+    fields = ['product_title','short_description','description','price','image','author']
     permission_required = ("catalog_now_app.add_product")
 
 
 class ProductUpdate(LoginRequiredMixin, PermissionRequiredMixin,  BaseView, UpdateView):
     model = Product
     success_url = reverse_lazy("panel-page")
-    fields = ['product_title','short_description','description','price','image','author','date_published']
+    fields = ['product_title','short_description','description','price','image','author']
     permission_required = ("catalog_now_app.change_product")
 
 
@@ -52,19 +53,21 @@ class ProductDelete(LoginRequiredMixin, PermissionRequiredMixin, BaseView, Delet
     permission_required = ("catalog_now_app.delete_product")
 
 
-class PanelLogin(BaseView, LoginView):
+class PanelLogin(SuccessMessageMixin, BaseView, LoginView):
     template_name = 'catalog_now_app/panel_login.html'
-    next_page = reverse_lazy("panel-page")
+    next_page = reverse_lazy("product-admin")
+    success_message = "¡¡ Bienvenido %(username)s!!"
 
 
-class PanelLogout(BaseView, LogoutView):
+class PanelLogout(SuccessMessageMixin, BaseView, LogoutView):
     next_page = reverse_lazy("panel-login")
-
+    
 
 class SignUpView(SuccessMessageMixin, BaseView, CreateView):
     template_name = 'catalog_now_app/panel_create_account_form.html'
     success_url = reverse_lazy('panel-page')
     form_class = UserCreationForm
+    success_message = "¡¡ Cuenta creada satisfactoriamente !!"
     
 
 class UserProfile(LoginRequiredMixin, UserPassesTestMixin,  BaseView, DetailView):
