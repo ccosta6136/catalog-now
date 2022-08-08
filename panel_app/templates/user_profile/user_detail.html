@@ -2,6 +2,8 @@
 
 {% load crispy_forms_tags %}
 
+{% load static %}
+
 {% block main %}
 
 <section id="hero" class="hero d-flex align-items-center justify-content-center"></section>
@@ -27,7 +29,7 @@
                             </span>
                         </a>
                     {% else %}
-                        <a href=""><img src="/media/default.jpg" class="img-thumbnail rounded-start" /></a>
+                        <a href=""><img src="{% static 'avatar/default.jpg' %}" class="img-thumbnail rounded-start" /></a>
                     {% endif %}
               </div>
               <div class="col-md-8">
