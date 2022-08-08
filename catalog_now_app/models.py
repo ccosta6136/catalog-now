@@ -29,7 +29,7 @@ class Product(models.Model):
 
     
 class Catalog(models.Model):
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=90)
     social_network_one = models.URLField(null=True)
     social_network_two = models.URLField(null=True)
     social_network_three = models.URLField(null=True)
