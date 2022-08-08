@@ -9,7 +9,8 @@ class BaseView(View):
         context = super().get_context_data(**kwargs)
         context['catalog'] = Catalog.objects.order_by('-date_updated').first()
         if self.request.user.is_authenticated:
-            context['publisher'] = Publisher.objects.get(user_id=self.request.user.id)
+            if Publisher.objects.filter(user_id=self.request.user.id).count() > 0:
+                context['publisher'] = Publisher.objects.get(user_id=self.request.user.id)
         return context
 
 class MainPageView(BaseView, TemplateView):
