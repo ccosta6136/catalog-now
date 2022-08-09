@@ -6,8 +6,9 @@ Catalogo para publicar listado de productos
 2. [Tecnología](#tecnología)
 3. [Setup](#setup)
 4. [Mapa del usuario](#mapa-del-usuario)
-5. [Colaboradores](#colaboradores)
-5. [Video app de la aplicación](#video-app-catalog-now)
+5. [Casos de prueba](#casos-de-prueba)
+6. [Colaboradores](#colaboradores)
+7. [Video app de la aplicación](#video-app-catalog-now)
 
 
 
@@ -98,6 +99,10 @@ el cual le permite acceder al Perfil, Panel de Administracion o desloguearse
 ## Mapa del usuario
 
 [Miro - mapa de usuario](https://miro.com/app/board/uXjVOj_k2rg=/?share_link_id=399463018519).
+
+## Casos de prueba
+
+[Casos de prueba](https://docs.google.com/spreadsheets/d/1uEIr7sc-B0U5nE3B9Pu1qx707caib2q78oHCIwA6j8Q/edit?usp=sharing).
 
 
 ## Colaboradores
