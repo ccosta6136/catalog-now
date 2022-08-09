@@ -5,7 +5,8 @@ Catalogo para publicar listado de productos
 1. [Información general](#información-general)
 2. [Tecnología](#tecnología)
 3. [Setup](#setup)
-4. [Colaboradores](#colaboradores)
+4. [Mapa del usuario](#mapa-del-usuario)
+5. [Colaboradores](#colaboradores)
 
 ## Información general
 <p>Trabaja tu catalogo online y publicalo a todos tus clientes con Django.</p>
@@ -58,12 +59,12 @@ Catalogo para publicar listado de productos
 ```bash
 > python manage.py runserver
 ```
-###  Url de Acceso a la aplicación
+####  Url de Acceso a la aplicación
 ```bash
 > http://127.0.0.1:8000/
 ```
  
-### Url de Acceso al Panel de administración de la base de datos
+#### Url de Acceso al Panel de administración de la base de datos
 ```bash
 > http://127.0.0.1:8000/admin 
 ```
@@ -72,7 +73,7 @@ Catalogo para publicar listado de productos
 ## Administración de usuarios. 
 <p>Los usuarios podrán darse de alta ellos mismo desde (http://127.0.0.1:8000/panel/login). El usuario creado no tendrá permisos de crear, editar o eliminar hasta que el administrador le otorgue estos permisos. A su vez el usuario administrador deberá crear al nuevo usuario como "publisher" para poder crear productos bajo su username.</p>
 
-1. Acceso al panel de administración de Django (- > http://127.0.0.1:8000/admin ):
+1. Acceso al panel de administración de Django (http://127.0.0.1:8000/admin):
  para poder ingresar  al panel de administración sera con el superuser creado con anterioridad. 
 
 2. Una vez ingresado al panel de administración de Django deberá  agregar como Publisher
@@ -80,17 +81,17 @@ al usuario y luego  otorgales permisos para agregar, editar o eliminar según la
 
 ## Agregar Catalogo , Productos y editar perfil (Una vez registrado el usuario) 
 
-```bash
-1. -Ingresar a  - > http://127.0.0.1:8000/panel 
 
-2. -Loguearse con su usuario y contraseña.
+1. Ingresar a -> http://127.0.0.1:8000/panel 
 
-3. -Una vez registrado el usuario se  va a  encontrar con el panel de administración de productos en dónde  podrá 
+2. Loguearse con su usuario y contraseña.
+
+3. Una vez registrado el usuario se  va a  encontrar con el panel de administración de productos en dónde  podrá 
 elegir crear, agregar, editar o borrar un catalogo y/o  productos.
 
 4. En el margen superior derecho se encontrará con el menu del ususario
 el cual le permite acceder al Perfil, Panel de Administracion o desloguearse
-```
+
 ## Mapa del usuario
 
 [Miro - mapa de usuario](https://miro.com/app/board/uXjVOj_k2rg=/?share_link_id=399463018519).
