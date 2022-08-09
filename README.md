@@ -33,8 +33,13 @@ Catalogo para publicar listado de productos
 ## Setup
 <p>Instalar dependiencias</p>
 
+Linux:
 ```bash
 > pip install -r requirements.txt
+```
+Windows:
+```bash
+c:\> pip install -r requirements.txt
 ```
 
 ### Ajuste para correr Django
