@@ -8,7 +8,7 @@ Catalogo para publicar listado de productos
 4. [Colaboradores](#colaboradores)
 
 ## Información general
-<p>Trabaja tu catalogo online y publicalo a todos tus clientes en Django.</p>
+<p>Trabaja tu catalogo online y publicalo a todos tus clientes con Django.</p>
 <p>Algunas funciones en las que trabajamos.</p>
 
 - Lista de productos
@@ -16,7 +16,7 @@ Catalogo para publicar listado de productos
 - Panel de administración de catalogo de productos (Crear, Actualizar y borrar productos)
 - login
 - logout
-- Registracion
+- Registración
 
 ## Tecnología
 <p>Proyecto creado con:</p>
@@ -36,17 +36,17 @@ Catalogo para publicar listado de productos
 <p>**Creación de la Base de datos**</p>
 
 ```bash
-- > python mananage.py migrate 
+- > python manage.py migrate 
 
-- > c:\> py mananage.py migrate (Windows)
+- > c:\> py manage.py migrate (Windows)
 ```
 
 ### Crear superuser: 
 
 ```bash
-- > python mananage.py createsuperuser
+- > python manage.py createsuperuser
 
-- > User: (crear usuario)
+- > User: (usuario administrador)
 
 - > Email: (colocar email si es que lo desea)
 
@@ -56,7 +56,7 @@ Catalogo para publicar listado de productos
 ## Correr Servidor
 
 ```bash
-- > python mananage.py runserver
+- > python manage.py runserver
 
 ###  Url de Acceso a la aplicación
  - > http://127.0.0.1:8000/
@@ -67,13 +67,15 @@ Catalogo para publicar listado de productos
 <p>Si todo va bien, debería poder abrir el navegador y ver cómo se ejecuta la aplicación.</p>
 
 ## Administración de usuarios. 
+<p>Los usuarios podrán darse de alta ellos mismo desde (http://127.0.0.1:8000/panel). El usuario creado no tendrá permisos de crear, editar o eliminar hasta que el administrador le otorgue estos permisos. A su vez el usuario administrador deberá crear al nuevo usuario como "publisher" para poder crear productos bajo su username.</p>
+
 ```bash
-1. Acceso al panel de administración de Djnago (- > http://127.0.0.1:8000/admin ):
+1. Acceso al panel de administración de Django (- > http://127.0.0.1:8000/admin ):
  para poder ingresar  al panel de administración sera con el superuser creado con anterioridad. 
 ```
 
 ```bash
-2. Una vez ingresado al panel de administración de Djnago deberá  agregar como Publisher
+2. Una vez ingresado al panel de administración de Django deberá  agregar como Publisher
 al usuario y luego  otorgales permisos para agregar, editar o eliminar según las pretenciones del mismo.
 ```
 
@@ -88,7 +90,7 @@ al usuario y luego  otorgales permisos para agregar, editar o eliminar según la
 elegir crear, agregar, editar o borrar un catalogo y/o  productos.
 
 4. En el margen superior derecho se encontrará con el menu del ususario
-el cual le permite acceder al Profile, Panel de Admin o desloguearse
+el cual le permite acceder al Perfil, Panel de Administracion o desloguearse
 ```
 ## Mapa del usuario
 
