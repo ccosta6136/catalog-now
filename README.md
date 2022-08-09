@@ -1,4 +1,4 @@
-# catalog-now
+# CATALOG NOW
 Catalogo para publicar listado de productos
 
 ## Contenido
@@ -40,10 +40,13 @@ Catalogo para publicar listado de productos
 ### Ajuste para correr Django
 <p>**Creación de la Base de datos**</p>
 
+Linux:
 ```bash
 > python manage.py migrate 
-
-> c:\> py manage.py migrate (Windows)
+```
+Windows:
+```bash
+c:\> py manage.py migrate
 ```
 
 ### Crear superuser: 
@@ -74,27 +77,27 @@ Catalogo para publicar listado de productos
 ```
 <p>Si todo va bien, debería poder abrir el navegador y ver cómo se ejecuta la aplicación.</p>
 
-## Administración de usuarios. 
-<p>Los usuarios podrán darse de alta ellos mismo desde (http://127.0.0.1:8000/panel/login). El usuario creado no tendrá permisos de crear, editar o eliminar hasta que el administrador le otorgue estos permisos. A su vez el usuario administrador deberá crear al nuevo usuario como "publisher" para poder crear productos bajo su username.</p>
+## Administración de usuarios.
+<p>Los usuarios podrán darse de alta ellos mismo desde (http://127.0.0.1:8000/panel/login). El usuario creado no tendrá permisos de crear, editar o eliminar catalogo o productos hasta que el administrador le otorgue. A su vez el usuario administrador deberá crear al nuevo usuario como "publisher" para poder crear productos bajo su username.</p>
 
+PASOS:
 1. Acceso al panel de administración de Django (http://127.0.0.1:8000/admin):
  para poder ingresar  al panel de administración sera con el superuser creado con anterioridad. 
 
-2. Una vez ingresado al panel de administración de Django deberá  agregar como Publisher
+2. Una vez ingresado al panel de administración de Django deberá agregar como Publisher
 al usuario y luego  otorgales permisos para agregar, editar o eliminar según las pretenciones del mismo.
 
 ## Agregar Catalogo , Productos y editar perfil (Una vez registrado el usuario) 
-
 
 1. Ingresar a -> http://127.0.0.1:8000/panel 
 
 2. Loguearse con su usuario y contraseña.
 
-3. Una vez registrado el usuario se  va a  encontrar con el panel de administración de productos en dónde  podrá 
-elegir crear, agregar, editar o borrar un catalogo y/o  productos.
+3. Una vez registrado el usuario se va a encontrar con el panel de administración de productos en dónde  podrá 
+elegir crear, agregar, editar o borrar un catalogo y/o productos segun los permisos otorgados.
 
 4. En el margen superior derecho se encontrará con el menu del ususario
-el cual le permite acceder al Perfil, Panel de Administracion o desloguearse
+el cual le permite acceder al Perfil, Panel de Administracion o desloguearse.
 
 ## Mapa del usuario
 
