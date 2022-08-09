@@ -43,7 +43,7 @@ c:\> pip install -r requirements.txt
 ```
 
 ### Ajuste para correr Django
-<p>**Creación de la Base de datos**</p>
+<p>Creación de la Base de datos</p>
 
 Linux:
 ```bash
