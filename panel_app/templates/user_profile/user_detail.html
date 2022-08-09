@@ -20,8 +20,12 @@
         <div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0">
               <div class="col-md-4"> 
-                    {% if publisher.id %}
-                        <a href="{% url 'publisher-update' publisher.id %}"><img src="{{ publisher.avatar.url }}" class="img-thumbnail rounded-start" /></a>
+                    {% if publisher.id  %}
+                        {% if publisher.avatar  %}
+                            <a href="{% url 'publisher-update' publisher.id %}"><img src="{{ publisher.avatar.url }}" class="img-thumbnail rounded-start" /></a>
+                        {% else %}
+                            <a href="{% url 'publisher-update' publisher.id %}"><img src="{% static 'avatar/default.jpg' %}" class="img-thumbnail rounded-start" /></a>
+                        {% endif %}
                     {% else %}
                         <a href=""><img src="{% static 'avatar/default.jpg' %}" class="img-thumbnail rounded-start" /></a>
                     {% endif %}
