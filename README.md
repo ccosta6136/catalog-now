@@ -2,10 +2,10 @@
 Catalogo para publicar listado de productos
 
 ## Contenido
-1. Información general
-2. Tecnología
-3. Setup
-4. Colaboradores
+1. [Información general](#información-general)
+2. [Tecnología](#tecnología)
+3. [Setup](#setup)
+4. [Colaboradores](#colaboradores)
 
 ## Información general
 <p>Trabaja tu catalogo online y publicalo a todos tus clientes en Django.</p>
