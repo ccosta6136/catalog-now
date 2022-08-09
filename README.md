@@ -51,9 +51,17 @@ c:\> py manage.py migrate
 
 ### Crear superuser: 
 
+Linux
 ```bash
 > python manage.py createsuperuser
+```
 
+Windows
+```bash
+> py manage.py createsuperuser
+```
+
+```bash
 > User: (usuario administrador)
 
 > Email: (colocar email si es que lo desea)
@@ -94,10 +102,10 @@ al usuario y luego  otorgales permisos para agregar, editar o eliminar según la
 2. Loguearse con su usuario y contraseña.
 
 3. Una vez registrado el usuario se va a encontrar con el panel de administración de productos en dónde  podrá 
-elegir crear, agregar, editar o borrar un catalogo y/o productos segun los permisos otorgados.
+elegir crear, agregar, editar o borrar un catalogo y/o productos según los permisos otorgados.
 
 4. En el margen superior derecho se encontrará con el menu del ususario
-el cual le permite acceder al Perfil, Panel de Administracion o desloguearse.
+el cual le permite acceder al Perfil, Panel de Administración o desloguearse.
 
 ## Mapa del usuario
 
