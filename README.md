@@ -29,55 +29,54 @@ Catalogo para publicar listado de productos
 <p>Instalar dependiencias</p>
 
 ```bash
-- > pip install -r requirements.txt
+> pip install -r requirements.txt
 ```
 
 ### Ajuste para correr Django
 <p>**Creación de la Base de datos**</p>
 
 ```bash
-- > python manage.py migrate 
+> python manage.py migrate 
 
-- > c:\> py manage.py migrate (Windows)
+> c:\> py manage.py migrate (Windows)
 ```
 
 ### Crear superuser: 
 
 ```bash
-- > python manage.py createsuperuser
+> python manage.py createsuperuser
 
-- > User: (usuario administrador)
+> User: (usuario administrador)
 
-- > Email: (colocar email si es que lo desea)
+> Email: (colocar email si es que lo desea)
 
-- > Pass: (Completar con un contraseña)
+> Pass: (Completar con un contraseña)
 ```
 
 ## Correr Servidor
 
 ```bash
-- > python manage.py runserver
-
+> python manage.py runserver
+```
 ###  Url de Acceso a la aplicación
- - > http://127.0.0.1:8000/
+```bash
+> http://127.0.0.1:8000/
+```
  
 ### Url de Acceso al Panel de administración de la base de datos
-- > http://127.0.0.1:8000/admin 
+```bash
+> http://127.0.0.1:8000/admin 
 ```
 <p>Si todo va bien, debería poder abrir el navegador y ver cómo se ejecuta la aplicación.</p>
 
 ## Administración de usuarios. 
-<p>Los usuarios podrán darse de alta ellos mismo desde (http://127.0.0.1:8000/panel). El usuario creado no tendrá permisos de crear, editar o eliminar hasta que el administrador le otorgue estos permisos. A su vez el usuario administrador deberá crear al nuevo usuario como "publisher" para poder crear productos bajo su username.</p>
+<p>Los usuarios podrán darse de alta ellos mismo desde (http://127.0.0.1:8000/panel/login). El usuario creado no tendrá permisos de crear, editar o eliminar hasta que el administrador le otorgue estos permisos. A su vez el usuario administrador deberá crear al nuevo usuario como "publisher" para poder crear productos bajo su username.</p>
 
-```bash
 1. Acceso al panel de administración de Django (- > http://127.0.0.1:8000/admin ):
  para poder ingresar  al panel de administración sera con el superuser creado con anterioridad. 
-```
 
-```bash
 2. Una vez ingresado al panel de administración de Django deberá  agregar como Publisher
 al usuario y luego  otorgales permisos para agregar, editar o eliminar según las pretenciones del mismo.
-```
 
 ## Agregar Catalogo , Productos y editar perfil (Una vez registrado el usuario) 
 
