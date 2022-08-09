@@ -7,6 +7,9 @@ Catalogo para publicar listado de productos
 3. [Setup](#setup)
 4. [Mapa del usuario](#mapa-del-usuario)
 5. [Colaboradores](#colaboradores)
+5. [Video app de la aplicación](#video-app-catalog-now)
+
+
 
 ## Información general
 <p>Trabaja tu catalogo online y publicalo a todos tus clientes con Django.</p>
@@ -96,3 +99,11 @@ el cual le permite acceder al Perfil, Panel de Administracion o desloguearse
 
 [Miro - mapa de usuario](https://miro.com/app/board/uXjVOj_k2rg=/?share_link_id=399463018519).
 
+
+## Colaboradores
+
+- Pablo Moreno
+- César Costa
+
+## Video app Catalog Now
+https://drive.google.com/file/d/1R55iKyjhFPve3OpUtbytN1EdYW_Ro1Cu/view?usp=sharing
