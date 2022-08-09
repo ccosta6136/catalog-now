@@ -114,11 +114,12 @@ class CatalogList(LoginRequiredMixin, BaseView, ListView):
     context_object_name = "catalogs"
 
 
-class CatalogCreate(LoginRequiredMixin, SuccessMessageMixin, BaseView, CreateView):
+class CatalogCreate(LoginRequiredMixin, PermissionRequiredMixin, SuccessMessageMixin, BaseView, CreateView):
     model = Catalog
     success_url = reverse_lazy("catalog-page")
     fields = ['name','social_network_twitter','social_network_instagram', 'social_network_linkedin','email', 'address', 'city', 'zip_code', 'country', 'phone', 'whatsapp_phone_number']
     success_message = "¡¡ Catalogo creado !!"
+    permission_required = ("catalog_now_app.add_catalog")
 
     def get_form(self, form_class=None):
         if form_class is None:
@@ -134,11 +135,12 @@ class CatalogCreate(LoginRequiredMixin, SuccessMessageMixin, BaseView, CreateVie
         return form
 
 
-class CatalogUpdate(LoginRequiredMixin, SuccessMessageMixin, BaseView, UpdateView):
+class CatalogUpdate(LoginRequiredMixin, PermissionRequiredMixin, SuccessMessageMixin, BaseView, UpdateView):
     model = Catalog
     success_url = reverse_lazy("catalog-page")
     fields = ['name','social_network_twitter','social_network_instagram', 'social_network_linkedin','email', 'address', 'city', 'zip_code', 'country', 'phone', 'whatsapp_phone_number']
     success_message = "¡¡ Catalogo actualizado !!"
+    permission_required = ("catalog_now_app.change_catalog")
 
     def get_form(self, form_class=None):
         if form_class is None:
