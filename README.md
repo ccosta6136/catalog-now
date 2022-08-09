@@ -58,7 +58,7 @@ Linux
 
 Windows
 ```bash
-> py manage.py createsuperuser
+c:\> py manage.py createsuperuser
 ```
 
 ```bash
@@ -71,17 +71,23 @@ Windows
 
 ## Correr Servidor
 
+Linux:
 ```bash
 > python manage.py runserver
 ```
+Windows:
+```bash
+c:\> py manage.py runserver
+```
+
 ####  Url de Acceso a la aplicación
 ```bash
-> http://127.0.0.1:8000/
+http://127.0.0.1:8000/
 ```
  
 #### Url de Acceso al Panel de administración de la base de datos
 ```bash
-> http://127.0.0.1:8000/admin 
+http://127.0.0.1:8000/admin 
 ```
 <p>Si todo va bien, debería poder abrir el navegador y ver cómo se ejecuta la aplicación.</p>
 
