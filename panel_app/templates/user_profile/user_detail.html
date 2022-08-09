@@ -21,13 +21,23 @@
             <div class="row g-0">
               <div class="col-md-4"> 
                     {% if publisher.id %}
-                        <a href="{% url 'publisher-update' publisher.id %}">
-                            <img src="{{ publisher.avatar.url }}" class="img-thumbnail rounded-start" />
-                            <span class="position-absolute top-0 start-10 translate-middle badge rounded-pill bg-primary ">
-                              <i class="bi bi-pencil-square"></i>
-                              <span class="visually-hidden">Editar foto</span>
-                            </span>
-                        </a>
+                        {% if publisher.avatar  %}
+                            <a href="{% url 'publisher-update' publisher.id %}">
+                                <img src="{{publisher.avatar.url}}" class="img-thumbnail rounded-start" />
+                                <span class="position-absolute top-0 start-10 translate-middle badge rounded-pill bg-primary ">
+                                <i class="bi bi-pencil-square"></i>
+                                <span class="visually-hidden">Editar foto</span>
+                                </span>
+                            </a>
+                        {% else %}     
+                            <a href="{% url 'publisher-update' publisher.id %}">
+                                <img src="{% static 'avatar/default.jpg' %}" class="img-thumbnail rounded-start" />
+                                <span class="position-absolute top-0 start-10 translate-middle badge rounded-pill bg-primary ">
+                                    <i class="bi bi-pencil-square"></i>
+                                    <span class="visually-hidden">Editar foto</span>
+                                    </span>
+                            </a>
+                        {% endif %}    
                     {% else %}
                         <a href=""><img src="{% static 'avatar/default.jpg' %}" class="img-thumbnail rounded-start" /></a>
                     {% endif %}
