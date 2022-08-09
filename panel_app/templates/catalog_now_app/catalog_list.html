@@ -29,7 +29,9 @@
             <a href="{% url 'product-admin'%}" class="btn btn-outline-secondary me-2">Volver a panel</a>    
         </div>
         <div class="justify-content-end">
-            <a class="btn btn-primary" href="{% url 'catalog-create' %}" role="button">Crear nuevo Catalogo</a>    
+            {% if perms.catalog_now_app.add_catalog %}
+                <a class="btn btn-primary" href="{% url 'catalog-create' %}" role="button">Crear nuevo Catalogo</a>   
+            {% endif %}
         </div>
     </div>
 
@@ -59,7 +61,9 @@
                     <td>{{catalog.date_created}}</td>
                     <td>{{catalog.date_updated}}</td>
                     <td>
-                        <a class="btn btn-info" href="{% url 'catalog-update' catalog.id %}" role="button">Editar</a>
+                        {% if perms.catalog_now_app.change_catalog %}
+                            <a class="btn btn-info" href="{% url 'catalog-update' catalog.id %}" role="button">Editar</a>
+                        {% endif %}    
                     </td>
                 </tr>
             {% endfor %}
